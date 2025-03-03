@@ -10,7 +10,7 @@ export class _4IoTWidget extends HTMLElement {
     }
 
     static hasAddedMsgListener = false
-    static observedAttributes = ['asset', 'view', 'param1', 'period', 'window', 'module', 'dh']
+    static observedAttributes = ['asset', 'view', 'param1', 'period', 'window', 'module']
 
     constructor() {
         super();
