@@ -10,7 +10,7 @@ export class _4IoTWidget extends HTMLElement {
     }
 
     static hasAddedMsgListener = false
-    static observedAttributes = ['asset', 'view', 'param1', 'period', 'window', 'module']
+    static observedAttributes = ['asset', 'view', 'param1', 'period', 'window', 'module', 'host']
 
     constructor() {
         super();
@@ -65,12 +65,18 @@ export class _4IoTWidget extends HTMLElement {
             }
         })
 
-        var type = "-"
-        var id = "-"
+        let type = "-"
+        let id = "-"
         if (all_params.hasOwnProperty("asset")) {
             type = "asset"
             id = all_params.asset
             delete all_params.asset
+        }
+
+        let host = HOST
+        if (all_params.hasOwnProperty("host")) {
+            host = all_params.host
+            delete all_params.host
         }
 
         // var query = QueryParams.stringify(all_params)
@@ -83,7 +89,7 @@ export class _4IoTWidget extends HTMLElement {
             .forEach(key => usp.set(key, all_params[key]));
 
         const query = usp.toString(); // convert URLSearchParams to a query string
-        const src = `//${HOST}/framed/v1/frame/${type}/${id}?` + query
+        const src = `//${host}/framed/v1/frame/${type}/${id}?` + query
         console.log("main.js frame src: ", src)
 
         el.setAttribute("src", src)
