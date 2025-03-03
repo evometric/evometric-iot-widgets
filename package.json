@@ -3,7 +3,7 @@
   "license": "public domain",
   "author": "Rob Shepherd <rob@evometric.com>",
   "licenses:": "LicenseRef-LICENSE",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "dist/web-component/iot-widget-wc.js",
   "module": "dist/web-component/iot-widget-wc.js",
