@@ -1,10 +1,29 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "evometric-iot-widgets",
+  "license": "public domain",
+  "author": "Rob Shepherd <rob@evometric.com>",
+  "licenses:": "LicenseRef-LICENSE",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "main": "dist/web-component/iot-widget-wc.js",
+  "module": "dist/web-component/iot-widget-wc.js",
+  "targets": {
+    "web-component": {
+      "source": "src/web-component/iot-widget-wc.js",
+      "optimize": false
+    },
+    "react-demo": {
+      "source": "src/react-demo/index.html",
+      "optimize": true
+    }
   },
-  "private": true
+
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.3",
+    "parcel": "latest",
+    "process": "^0.11.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {}
 }
